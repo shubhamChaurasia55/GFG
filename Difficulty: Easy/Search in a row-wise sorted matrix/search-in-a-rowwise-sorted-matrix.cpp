@@ -5,12 +5,10 @@ using namespace std;
 
 // } Driver Code Ends
 
-
 class Solution {
   public:
     // Function to search a given number in row-column sorted matrix.
     bool searchRowMatrix(vector<vector<int>> &mat, int x) {
-        // code here
         int row = mat.size();
         int col = mat[0].size();
         
@@ -22,6 +20,8 @@ class Solution {
             }
         }
         return false;
+        
+
     }
 };
 
