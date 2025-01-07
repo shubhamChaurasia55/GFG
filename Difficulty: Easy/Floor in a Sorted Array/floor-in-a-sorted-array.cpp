@@ -10,14 +10,16 @@ class Solution {
     int findFloor(vector<int>& arr, int k) {
 
         // Your code here
-        int n = arr.size();
-        int idx = -1;
-        if(k==arr[0]) idx = 0;
-        for(int i=1;i<n;i++){
-            if(k<arr[i] and k>arr[i-1]) idx = i-1;
-            else if(k==arr[i] and k>arr[i-1]) idx = i;
-        }
-        return idx;
+       int low = 0;
+       int high = arr.size()-1;
+       if(k<arr[0]) return -1;
+       while(low<=high){
+           int mid = low + (high-low)/2;
+           if(arr[mid] == k) return mid;
+           if(arr[mid] > k) high = mid - 1;
+           if(arr[mid] < k) low = mid + 1;
+       }
+       return low-1;
     }
 };
 
