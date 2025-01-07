@@ -19,7 +19,7 @@ class Solution {
            if(arr[mid] > k) high = mid - 1;
            if(arr[mid] < k) low = mid + 1;
        }
-       return low-1;
+       return high;
     }
 };
 
